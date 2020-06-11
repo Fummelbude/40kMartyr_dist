@@ -512,15 +512,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./component/pagenotfound/pagenotfound.component */ "./src/app/core/component/pagenotfound/pagenotfound.component.ts");
 /* harmony import */ var _component_welcomePage_welcomePage_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./component/welcomePage/welcomePage.component */ "./src/app/core/component/welcomePage/welcomePage.component.ts");
 /* harmony import */ var _component_fieldset_fieldset_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./component/fieldset/fieldset.component */ "./src/app/core/component/fieldset/fieldset.component.ts");
-/* harmony import */ var _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./component/plam/plam.component */ "./src/app/core/component/plam/plam.component.ts");
+/* harmony import */ var _pipe_ui_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pipe/ui.pipe */ "./src/app/core/pipe/ui.pipe.ts");
+/* harmony import */ var _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./component/plam/plam.component */ "./src/app/core/component/plam/plam.component.ts");
+
+
+
+
+//Components
 
 
 
 
 
-
-
-
+//Pipes
 
 
 var CoreModule = /** @class */ (function () {
@@ -539,11 +543,13 @@ var CoreModule = /** @class */ (function () {
         _component_welcomePage_welcomePage_component__WEBPACK_IMPORTED_MODULE_6__["WelcomePageComponent"],
         _component_fieldset_fieldset_component__WEBPACK_IMPORTED_MODULE_7__["FieldsetComponent"],
         _component_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_5__["PageNotFoundComponent"],
-        _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_8__["PlamComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+        _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_9__["PlamComponent"],
+        _pipe_ui_pipe__WEBPACK_IMPORTED_MODULE_8__["UiPipe"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
         primeng_menubar__WEBPACK_IMPORTED_MODULE_2__["MenubarModule"],
         primeng_fieldset__WEBPACK_IMPORTED_MODULE_3__["FieldsetModule"]], exports: [_component_titleMenu_titleMenu_component__WEBPACK_IMPORTED_MODULE_4__["TitleMenuComponent"],
         _component_fieldset_fieldset_component__WEBPACK_IMPORTED_MODULE_7__["FieldsetComponent"],
-        _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_8__["PlamComponent"]] }); })();
+        _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_9__["PlamComponent"],
+        _pipe_ui_pipe__WEBPACK_IMPORTED_MODULE_8__["UiPipe"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CoreModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
@@ -557,15 +563,80 @@ var CoreModule = /** @class */ (function () {
                     _component_welcomePage_welcomePage_component__WEBPACK_IMPORTED_MODULE_6__["WelcomePageComponent"],
                     _component_fieldset_fieldset_component__WEBPACK_IMPORTED_MODULE_7__["FieldsetComponent"],
                     _component_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_5__["PageNotFoundComponent"],
-                    _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_8__["PlamComponent"],
+                    _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_9__["PlamComponent"],
+                    _pipe_ui_pipe__WEBPACK_IMPORTED_MODULE_8__["UiPipe"]
                 ],
                 exports: [
                     _component_titleMenu_titleMenu_component__WEBPACK_IMPORTED_MODULE_4__["TitleMenuComponent"],
                     _component_fieldset_fieldset_component__WEBPACK_IMPORTED_MODULE_7__["FieldsetComponent"],
-                    _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_8__["PlamComponent"],
+                    _component_plam_plam_component__WEBPACK_IMPORTED_MODULE_9__["PlamComponent"],
+                    _pipe_ui_pipe__WEBPACK_IMPORTED_MODULE_8__["UiPipe"]
                 ],
                 providers: []
             }]
+    }], null, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/core/pipe/ui.pipe.ts":
+/*!**************************************!*\
+  !*** ./src/app/core/pipe/ui.pipe.ts ***!
+  \**************************************/
+/*! exports provided: UiPipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UiPipe", function() { return UiPipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+
+
+var UiPipe = /** @class */ (function () {
+    function UiPipe() {
+        this.RE_COLORCODE_FULL = /\[[0-9a-f]{8}\][^\[]*\[\/[0-9a-f]{8}\]/g;
+        this.RE_COLORCODE = /\[\/?[0-9a-f]{8}\]/g;
+        this.RE_SPEC_CHARS = /[\[\]\/]/g;
+        this.HTML_START = '<font color="%">';
+        this.HTML_END = '</font>';
+    }
+    UiPipe.prototype.transform = function (value) {
+        var returnValue = '';
+        if (value.length == 2)
+            returnValue = value[1]; //perfect
+        if (value.constructor.name === Object.name)
+            returnValue = JSON.stringify(value);
+        return this.transformCommandTags(returnValue);
+    };
+    UiPipe.prototype.transformCommandTags = function (value) {
+        var returnValue = value;
+        return this.transformColorCode(returnValue);
+    };
+    UiPipe.prototype.transformColorCode = function (value) {
+        var returnValue = value;
+        var colorCodeFull = this.RE_COLORCODE_FULL.exec(value);
+        while (colorCodeFull != null) {
+            var colorCodeMatch = this.RE_COLORCODE.exec(colorCodeFull[0]);
+            var colorCode = colorCodeMatch[0].replace(this.RE_SPEC_CHARS, '');
+            var content = colorCodeFull[0].replace(this.RE_COLORCODE, '');
+            var newString = this.HTML_START.replace('%', colorCode);
+            newString += content;
+            newString += this.HTML_END;
+            returnValue = returnValue.replace(colorCodeFull[0], newString);
+            //            console.log( 'colorCode:', colorCode );
+            //            console.log( 'content:', content );
+            colorCodeFull = this.RE_COLORCODE_FULL.exec(value);
+        }
+        return returnValue;
+    };
+    UiPipe.ɵfac = function UiPipe_Factory(t) { return new (t || UiPipe)(); };
+    UiPipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({ name: "ui", type: UiPipe, pure: true });
+    return UiPipe;
+}());
+
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UiPipe, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"],
+        args: [{ name: 'ui' }]
     }], null, null); })();
 
 
