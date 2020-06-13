@@ -1,0 +1,398 @@
+{
+	"TarotCard": {
+		"Type": [
+			"tarotcard",
+			"Uther's Tarot Card"
+		],
+		"Value": [
+			"10000",
+			"10000"
+		],
+		"FateValue": [
+			"20",
+			"20"
+		],
+		"Effect": [
+			"tarotupgrade",
+			"tarotupgrade"
+		]
+	},
+	"VoidCrusade_bp_zacsi": {
+		"Type": [
+			"bag",
+			"Lootbox"
+		],
+		"Icon": [
+			"bag",
+			"Lootbox"
+		],
+		"LootModel": [
+			"essencebox",
+			"essencebox"
+		],
+		"Contents": [
+			"voidcrusade_bp",
+			"voidcrusade_bp"
+		]
+	},
+	"aetherwalker_armour": {
+		"Type": [
+			"psyker_armor",
+			"Light Armour"
+		],
+		"Icon": [
+			"aetherwalker_armour",
+			"Aetherwalker Armour"
+		],
+		"Rarity": [
+			[
+				"common",
+				"Common"
+			],
+			[
+				"uncommon",
+				"Mastercrafted"
+			],
+			[
+				"rare1",
+				"Rare"
+			],
+			[
+				"rare2",
+				"Artificer"
+			],
+			[
+				"godlike",
+				"Relic"
+			]
+		],
+		"Value": [
+			"300",
+			"300"
+		],
+		"Damage_reduce": [
+			"low",
+			"low"
+		],
+		"All_resist": [
+			"high",
+			"high"
+		],
+		"Skills": [
+			"psyker_armor_teleport",
+			"Aetheral Phasing"
+		],
+		"Models": {
+			"armor": "psyker_armour_2"
+		},
+		"GodlikeEnchants": [
+			[
+				"bonus_movement_speed_based_on_suppression",
+				"[ff2bede6]+10%[\/ff2bede6] Movement speed in [fff5ec7d]Suppressed[\/fff5ec7d] state, [ff2bede6]+20%[\/ff2bede6] Movement speed in [fff3261f]Overwhelmed[\/fff3261f] state"
+			],
+			[
+				"cast_rosarius_force_field_when_stun_or_knockdown_suffered",
+				"Triggers a Rosarius Force Field when Stunned or Knocked Down (for 50% of the normal duration)"
+			],
+			[
+				"chance_to_cast_fabricator_scatter_field_on_struck",
+				"{artifact_enchant,100} chance to trigger a Fabricatus Scatter Field on Hit taken"
+			],
+			[
+				"hp_regen_from_missing_hp",
+				"HP Regeneration increased by the % of Missing HP"
+			],
+			[
+				"movement_bonus_if_no_damage_received",
+				"{movement_speed} Movement speed, when no damage is taken for 5 seconds"
+			],
+			[
+				"reflect_damage_based_on_missing_hp",
+				"{artifact_enchant,100} chance to Reflect 1% of the Damage Taken for every 1% of HP missing"
+			],
+			[
+				"skill1_cost_reduction",
+				"{resource_cost,100} {resource} cost to Armour skills"
+			],
+			[
+				"zeal_per_kill",
+				"+{resource} based on enemy type on Kill"
+			],
+			[
+				"chance_to_reduce_warp_heat_cost",
+				"Each psychic power use has a {artifact_enchant,100} chance to negate the Warp Heat cost of psychic powers used in the next 5 seconds (stacking)"
+			],
+			[
+				"damage_buff_to_next_spell",
+				"{artifact_enchant,100} Damage Bonus for the next Psychic Power use on using any Non-Psychic Power Skill\\n Stacks up to 5 times"
+			],
+			[
+				"movement_speed_after_spell_cast",
+				"{artifact_enchant,100} Movement Speed after using a Psychic Power for 5 seconds"
+			],
+			[
+				"reflect_damage_based_on_warp_heat",
+				"[ff2bede6]+1%[\/ff2bede6] Chance for every 3 points of Current Warp Heat to Reflect incoming damage to attacker"
+			],
+			[
+				"warp_heat_per_sec",
+				"[ff2bede6]-2[\/ff2bede6] Warp Heat\/second"
+			],
+			[
+				"cooldown_reduction_after_teleport",
+				"[ff2bede6]-50%[\/ff2bede6] from  the Remaining Cooldown for Psychic Powers on Teleport Skill use"
+			]
+		]
+	},
+	"bp_warpbound_armour_b_Big_armours_psyker_Zeal_per_kill_biggodlike": {
+		"Type": [
+			"blueprint",
+			"Blueprint"
+		],
+		"NameID": [
+			"warpbound_armour_b_big_armours_psyker_zeal_per_kill",
+			"warpbound_armour_b_big_armours_psyker_zeal_per_kill"
+		],
+		"Icon": [
+			"blueprint",
+			"Blueprint"
+		],
+		"Rarity": [
+			"biggodlike",
+			"Archeotech Relic"
+		],
+		"Value": [
+			"400000",
+			"400000"
+		],
+		"Blueprint": [
+			"warpbound_armour_b_big_armours_psyker_zeal_per_kill_biggodlike",
+			"warpbound_armour_b_big_armours_psyker_zeal_per_kill_biggodlike"
+		],
+		"bpClass": [
+			"psyker",
+			"Psyker"
+		]
+	},
+	"bp_warpbound_armour_godlike": {
+		"Type": [
+			"blueprint",
+			"Blueprint"
+		],
+		"NameID": [
+			"warpbound_armour",
+			"Warpbound Armour"
+		],
+		"Icon": [
+			"blueprint",
+			"Blueprint"
+		],
+		"Rarity": [
+			"godlike",
+			"Relic"
+		],
+		"Value": [
+			"300000",
+			"300000"
+		],
+		"Blueprint": [
+			"warpbound_armour_godlike",
+			"warpbound_armour_godlike"
+		],
+		"bpClass": [
+			"psyker",
+			"Psyker"
+		]
+	},
+	"bp_warpbound_armour_rare2": {
+		"Type": [
+			"blueprint",
+			"Blueprint"
+		],
+		"NameID": [
+			"warpbound_armour",
+			"Warpbound Armour"
+		],
+		"Icon": [
+			"blueprint",
+			"Blueprint"
+		],
+		"Rarity": [
+			"rare2",
+			"Artificer"
+		],
+		"Value": [
+			"200000",
+			"200000"
+		],
+		"Blueprint": [
+			"warpbound_armour_rare2",
+			"warpbound_armour_rare2"
+		],
+		"bpClass": [
+			"psyker",
+			"Psyker"
+		]
+	},
+	"carthean_sword": {
+		"Type": [
+			"carthean_sword",
+			"Carthean Sword"
+		],
+		"Icon": [
+			"carthean_sword",
+			"Carthean Sword"
+		],
+		"Rarity": [
+			[
+				"common",
+				"Common"
+			],
+			[
+				"uncommon",
+				"Mastercrafted"
+			],
+			[
+				"rare1",
+				"Rare"
+			],
+			[
+				"rare2",
+				"Artificer"
+			],
+			[
+				"godlike",
+				"Relic"
+			]
+		],
+		"Value": [
+			"300",
+			"300"
+		],
+		"Damage": [
+			"high",
+			"high"
+		],
+		"Deflect": [
+			"default",
+			"default"
+		],
+		"WeaponCategory": [
+			"2h_melee",
+			"2h_melee"
+		],
+		"Skills": [
+			[
+				"carthean_sword_carthean_strike",
+				"Carthean Strike"
+			],
+			[
+				"carthean_sword_crimson_path",
+				"Crimson Path"
+			],
+			[
+				"carthean_sword_severance",
+				"Severance"
+			],
+			[
+				"carthean_sword_blade_dance",
+				"Blade Dance"
+			]
+		],
+		"Models": {
+			"mainhand": "carthean_sword"
+		},
+		"GodlikeEnchants": [
+			[
+				"damage_in_execution_bonus",
+				"{damage,100} Damage Bonus when the [fffffdcb]Execution[\/fffffdcb] effect is active"
+			],
+			[
+				"heal_on_deadly_strikes",
+				"HP and Suppression gained on Kill equal to [ff2bede6]+100%[\/ff2bede6] the killing blow's Damage"
+			],
+			[
+				"area_large_damage_on_deadly_strike",
+				"Single target attacks deal area damage around the target on a One-hit kill"
+			],
+			[
+				"bonus_damage_in_surprise",
+				"{artifact_enchant,100} Damage Bonus in [fffffdcb]Surprise[\/fffffdcb] State"
+			],
+			[
+				"chance_to_double_damage_and_healing",
+				"{artifact_enchant,100} chance to deal double damage and gain HP equal to that amount"
+			],
+			[
+				"chance_to_give_vulnerability_on_hit",
+				"Random [fffffdcb]Vulnerability[\/fffffdcb] (Heat, Warp, Physical) to the target on Hit"
+			],
+			[
+				"damage_bonus_based_on_debuff",
+				"{artifact_enchant,100} Damage Bonus for every Debuff on the target"
+			],
+			[
+				"damage_reduce_based_on_debuff",
+				"{nembonusz;artifact_enchant}[ff2bede6]%[\/ff2bede6] less Damage dealt by enemies for every debuff effect on them"
+			],
+			[
+				"first_attack_bonus_in_surprise",
+				"{artifact_enchant,100} Damage Bonus for the First Attack in [fffffdcb]Surprise[\/fffffdcb] State"
+			],
+			[
+				"toxin_token_on_hit",
+				"{artifact_enchant,100} Damage Done reduction for the target on Hit. Stacks up to 10 times."
+			],
+			[
+				"chance_knockback_and_slow_on_hit",
+				"{artifact_enchant,100} chance to [fffffdcb]Slow[\/fffffdcb] or [fffffdcb]Knockback[\/fffffdcb] on Hit"
+			],
+			[
+				"chance_to_blind",
+				"{artifact_enchant,100} Chance to inflict Blind on Hit"
+			],
+			[
+				"chance_to_shock_per_hit",
+				"{artifact_enchant,100} chance to [fffffdcb]Shock[\/fffffdcb] on Hit"
+			],
+			[
+				"double_suppression_damage_on_crit",
+				"{critical_suppression_damage,100} Suppression Damage Bonus on Critical Hit"
+			],
+			[
+				"heal_on_crit",
+				"{nembonusz;artifact_enchant,100} HP gained on Critical Hit"
+			],
+			[
+				"rosarius_force_field_on_crit",
+				"{artifact_enchant,100} chance to trigger a Rosarius Force Field on Critical Hit"
+			]
+		]
+	},
+	"rune1": {
+		"Type": [
+			"rune",
+			"Void Crusade Shards are used to create Void Crusade campaigns on the Command Bridge."
+		],
+		"Icon": [
+			"rune1",
+			"Hermeticon Psalm"
+		],
+		"Value": [
+			"5000",
+			"5000"
+		],
+		"GemRune": [
+			"1",
+			"Confiscated Items (Normal)"
+		],
+		"GemOtherEnchant": [
+			"rune_1",
+			"[ff2bede6]+3%[\/ff2bede6] Damage Reduction for 2 seconds on Kill"
+		],
+		"GemLevel": [
+			"1",
+			"Confiscated Items (Normal)"
+		]
+	}
+}
